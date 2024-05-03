@@ -105,7 +105,7 @@ module Chewy
         if value.arity.zero?
           object.instance_exec(&value)
         elsif value.arity.negative?
-          value.call(*object)
+          value.call(*objects)
         else
           value.call(*objects.first(value.arity))
         end
